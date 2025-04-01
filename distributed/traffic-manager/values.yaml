@@ -11,7 +11,7 @@
 
 aws:
   # -- If AWS is used as the cloud provider
-  enabled: false
+  enabled: true
   ecr:
     # -- AWS Elastic Container Registry name
     registry: ""
@@ -30,7 +30,7 @@ aws:
   serviceAccountName: ""
 azure:
   # -- If Azure is used as the cloud provider
-  enabled: true
+  enabled: false
   acr:
     # -- Azure container registry name
     registry: ""
@@ -58,9 +58,9 @@ azure:
       tenantId: ""
     resourceManager:
       # -- Subscription ID of the target Azure Key Vault
-      subscriptionId: "APIM-rnd-001"
+      subscriptionId: ""
       # -- Name of the Azure Resource Group to which the target Azure Key Vault belongs
-      resourceGroup: "rg-private-apim-kavindar"
+      resourceGroup: ""
 
 # Google Cloud Platform (GCP) integration status
 gcp:
@@ -115,13 +115,13 @@ wso2:
       # -- Super admin username
       adminUsername: "admin"
       # -- Super admin password
-      adminPassword: "adminksr"
+      adminPassword: "admin"
       databases:
         # -- Database type. eg: mysql, oracle, mssql, postgres
-        type: "mysql"
+        type: ""
         jdbc:
           # -- JDBC driver class name
-          driver: "com.mysql.cj.jdbc.Driver"
+          driver: ""
         # -- APIM AM_DB configurations.
         apim_db:
           # -- APIM AM_DB URL
@@ -252,11 +252,11 @@ wso2:
     # Container image configurations
     image:
       # -- Container registry hostname
-      registry: "docker.io"
+      registry: ""
       # -- Azure ACR repository name consisting the image
-      repository: "kavindasr/wso2am-tm:rc2"
+      repository: ""
       # -- Docker image digest
-      digest: "sha256:96209831aac3e109797e3b5d2e93fb36182fbef5b2fa491be64e3560d8bc6067"
+      digest: ""
       # -- Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
       imagePullPolicy: Always
 
