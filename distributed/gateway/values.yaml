@@ -155,9 +155,9 @@ wso2:
         properties:
           key: value
       # -- Super admin username
-      adminUsername: ""
+      adminUsername: "admin"
       # -- Super admin password
-      adminPassword: ""
+      adminPassword: "admin"
       databases:
         # -- Database type. eg: mysql, oracle, mssql, postgres
         type: ""
@@ -190,7 +190,7 @@ wso2:
 
       security:
         # -- Kubernetes secret containing the keystores and truststore
-        jksSecretName: "apim-keystore-secret"
+        jksSecretName: ""
         keystores:
           primary:
             # -- Primary keystore enabled
@@ -200,9 +200,9 @@ wso2:
             # -- Primary keystore alias
             alias: "wso2carbon"
             # -- Primary keystore password
-            password: ""
+            password: "wso2carbon"
             # -- Primary keystore key password
-            keyPassword: ""
+            keyPassword: "wso2carbon"
           tls:
             # -- TLS keystore enabled
             enabled: true
@@ -211,9 +211,9 @@ wso2:
             # -- TLS keystore alias
             alias: "wso2carbon"
             # -- TLS keystore password
-            password: ""
+            password: "wso2carbon"
             # -- TLS keystore key password
-            keyPassword: ""
+            keyPassword: "wso2carbon"
           internal:
             # -- Internal keystore enabled
             enabled: false
@@ -222,18 +222,18 @@ wso2:
             # -- Internal keystore alias
             alias: "wso2carbon"
             # -- Internal keystore password
-            password: ""
+            password: "wso2carbon"
             # -- Internal keystore key password
             keyPassword: ""
         truststore:
           # -- Truststore name
           name: "client-truststore.jks"
           # -- Truststore password
-          password: ""
+          password: "wso2carbon"
 
       km:
         # -- Key manager service name if default Resident KM is used
-        serviceUrl: "wso2am-cp-service"
+        serviceUrl: "apim-acp-wso2am-cp-service"
 
       iskm:
         # If Identity Server is used as the Resident KM
@@ -267,14 +267,14 @@ wso2:
       throttling:
         # -- Traffic manager loadbalancer service url for throttling.
         # If the traffic manager is separated from control-plane, all urls should be pointed to traffic-manager ones.
-        serviceUrl: "wso2am-cp-service"
+        serviceUrl: "apim-tm-wso2am-tm-service"
         portOffset: 0
         # -- Port of the service URL
         servicePort: 9443
         # -- Traffic manager service urls. You only need to define one if the TM is not in HA.
         urls:
-          - "wso2am-cp-1-service"
-          - "wso2am-cp-2-service"
+          - "apim-tm-wso2am-tm-1-service"
+          - "apim-tm-wso2am-tm-2-service"
         # -- Enable unlimited throttling tier
         unlimitedTier: true
         # -- Enable header based throttling
@@ -287,15 +287,15 @@ wso2:
       eventhub:
         # -- Event hub (control plane) enabled.
         # This should be enabled if the traffic manager is separated from the control-plane.
-        enabled: false
+        enabled: true
         # -- Event hub (control plane) loadbalancer service url
-        serviceUrl: "wso2am-cp-service"
+        serviceUrl: "apim-acp-wso2am-cp-service"
         # -- Event hub (control plane) service port
         servicePort: 9443
         # -- Event hub service urls
         urls:
-          - "wso2am-cp-1-service"
-          - "wso2am-cp-2-service"
+          - "apim-acp-wso2am-cp-1-service"
+          - "apim-acp-wso2am-cp-2-servic"
         
       # APIM cache related configurations
       cache:

@@ -11,7 +11,7 @@
 
 aws:
   # -- If AWS is used as the cloud provider
-  enabled: true
+  enabled: false
   ecr:
     # -- AWS Elastic Container Registry name
     registry: ""
@@ -30,7 +30,7 @@ aws:
   serviceAccountName: ""
 azure:
   # -- If Azure is used as the cloud provider
-  enabled: false
+  enabled: true
   acr:
     # -- Azure container registry name
     registry: ""
@@ -58,9 +58,9 @@ azure:
       tenantId: ""
     resourceManager:
       # -- Subscription ID of the target Azure Key Vault
-      subscriptionId: ""
+      subscriptionId: "APIM-rnd-001"
       # -- Name of the Azure Resource Group to which the target Azure Key Vault belongs
-      resourceGroup: ""
+      resourceGroup: "rg-private-apim-kavindar"
 
 # Google Cloud Platform (GCP) integration status
 gcp:
@@ -113,15 +113,15 @@ wso2:
         properties:
           key: value
       # -- Super admin username
-      adminUsername: ""
+      adminUsername: "admin"
       # -- Super admin password
-      adminPassword: ""
+      adminPassword: "adminksr"
       databases:
         # -- Database type. eg: mysql, oracle, mssql, postgres
-        type: ""
+        type: "mysql"
         jdbc:
           # -- JDBC driver class name
-          driver: ""
+          driver: "com.mysql.cj.jdbc.Driver"
         # -- APIM AM_DB configurations.
         apim_db:
           # -- APIM AM_DB URL
@@ -159,7 +159,7 @@ wso2:
 
       security:
         # -- Kubernetes secret containing the keystores and truststore
-        jksSecretName: "apim-keystore-secret"
+        jksSecretName: ""
         keystores:
           primary:
             # -- Primary keystore enabled
@@ -169,9 +169,9 @@ wso2:
             # -- Primary keystore alias
             alias: "wso2carbon"
             # -- Primary keystore password
-            password: ""
+            password: "wso2carbon"
             # -- Primary keystore key password
-            keyPassword: ""
+            keyPassword: "wso2carbon"
           tls:
             # -- TLS keystore enabled
             enabled: true
@@ -180,9 +180,9 @@ wso2:
             # -- TLS keystore alias
             alias: "wso2carbon"
             # -- TLS keystore password
-            password: ""
+            password: "wso2carbon"
             # -- TLS keystore key password
-            keyPassword: ""
+            keyPassword: "wso2carbon"
           internal:
             # -- Internal keystore enabled
             enabled: false
@@ -191,18 +191,18 @@ wso2:
             # -- Internal keystore alias
             alias: "wso2carbon"
             # -- Internal keystore password
-            password: ""
+            password: "wso2carbon"
             # -- Internal keystore key password
-            keyPassword: ""
+            keyPassword: "wso2carbon"
         truststore:
           # -- Truststore name
           name: "client-truststore.jks"
           # -- Truststore password
-          password: ""
+          password: "wso2carbon"
 
       km:
         # -- Key manager service name if default Resident KM is used
-        serviceUrl: "wso2am-cp-service"
+        serviceUrl: "apim-acp-wso2am-cp-service"
 
       iskm:
         # If Identity Server is used as the Resident KM
@@ -212,11 +212,11 @@ wso2:
 
       eventhub:
         # -- Event hub (control plane) loadbalancer service url
-        serviceUrl: "wso2am-cp-service"
+        serviceUrl: "apim-acp-wso2am-cp-service"
         # -- Event hub service urls
         urls:
-          - "wso2am-cp-1-service"
-          - "wso2am-cp-2-service"
+          - "apim-acp-wso2am-cp-1-service"
+          - "apim-acp-wso2am-cp-2-service"
 
       # APIM OAuth configurations
       oauth_config:
@@ -252,11 +252,11 @@ wso2:
     # Container image configurations
     image:
       # -- Container registry hostname
-      registry: ""
+      registry: "docker.io"
       # -- Azure ACR repository name consisting the image
-      repository: ""
+      repository: "kavindasr/wso2am-tm:rc2"
       # -- Docker image digest
-      digest: ""
+      digest: "sha256:96209831aac3e109797e3b5d2e93fb36182fbef5b2fa491be64e3560d8bc6067"
       # -- Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
       imagePullPolicy: Always
 

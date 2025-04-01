@@ -30,7 +30,7 @@ aws:
   serviceAccountName: ""
 azure:
   # -- If Azure is used as the cloud provider
-  enabled: false
+  enabled: true
   acr:
     # -- Azure container registry name
     registry: ""
@@ -135,9 +135,9 @@ wso2:
         properties:
           key: value
       # -- Super admin username
-      adminUsername: ""
+      adminUsername: "admin"
       # -- Super admin password
-      adminPassword: ""
+      adminPassword: "admin"
       databases:
         # -- Database type. eg: mysql, oracle, mssql, postgres
         type: ""
@@ -181,7 +181,7 @@ wso2:
 
       security:
         # -- Kubernetes secret containing the keystores and truststore
-        jksSecretName: "apim-keystore-secret"
+        jksSecretName: ""
         keystores:
           primary:
             # -- Primary keystore enabled
@@ -191,9 +191,9 @@ wso2:
             # -- Primary keystore alias
             alias: "wso2carbon"
             # -- Primary keystore password
-            password: ""
+            password: "wso2carbon"
             # -- Primary keystore key password
-            keyPassword: ""
+            keyPassword: "wso2carbon"
           tls:
             # -- TLS keystore enabled
             enabled: true
@@ -202,9 +202,9 @@ wso2:
             # -- TLS keystore alias
             alias: "wso2carbon"
             # -- TLS keystore password
-            password: ""
+            password: "wso2carbon"
             # -- TLS keystore key password
-            keyPassword: ""
+            keyPassword: "wso2carbon"
           internal:
             # -- Internal keystore enabled
             enabled: false
@@ -213,22 +213,22 @@ wso2:
             # -- Internal keystore alias
             alias: "wso2carbon"
             # -- Internal keystore password
-            password: ""
+            password: "wso2carbon"
             # -- Internal keystore key password
-            keyPassword: ""
+            keyPassword: "wso2carbon"
         truststore:
           # -- Truststore name
           name: "client-truststore.jks"
           # -- Truststore password
-          password: ""
+          password: "wso2carbon"
 
       eventhub:
         # -- Event hub (control plane) loadbalancer service url
-        serviceUrl: "wso2am-cp-service"
+        serviceUrl: "apim-acp-wso2am-cp-service"
         # -- Event hub service urls
         urls:
-          - "wso2am-cp-1-service"
-          - "wso2am-cp-2-service"
+          - "apim-acp-wso2am-cp-1-service"
+          - "apim-acp-wso2am-cp-2-service"
 
       # APIM OAuth configurations
       oauth_config:
