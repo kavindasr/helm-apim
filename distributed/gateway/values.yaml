@@ -294,8 +294,8 @@ wso2:
         servicePort: 9443
         # -- Event hub service urls
         urls:
-          - "apim-acp-wso2am-cp-1-service"
-          - "apim-acp-wso2am-cp-2-servic"
+          - "apim-acp-wso2am-acp-1-service"
+          - "apim-acp-wso2am-acp-2-service"
         
       # APIM cache related configurations
       cache:
