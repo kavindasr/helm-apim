@@ -11,7 +11,7 @@
 
 aws:
   # -- If AWS is used as the cloud provider
-  enabled: true
+  enabled: false
   ecr:
     # -- AWS Elastic Container Registry name
     registry: ""
@@ -174,7 +174,7 @@ wso2:
             keyPassword: "wso2carbon"
           tls:
             # -- TLS keystore enabled
-            enabled: true
+            enabled: false
             # -- TLS keystore name
             name: "wso2carbon.jks"
             # -- TLS keystore alias

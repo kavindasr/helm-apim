@@ -205,7 +205,7 @@ wso2:
             keyPassword: "wso2carbon"
           tls:
             # -- TLS keystore enabled
-            enabled: true
+            enabled: false
             # -- TLS keystore name
             name: "wso2carbon.jks"
             # -- TLS keystore alias

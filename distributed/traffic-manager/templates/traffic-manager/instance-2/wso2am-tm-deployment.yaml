@@ -160,9 +160,11 @@ spec:
           mountPath: /mnt/secrets-store
           readOnly: true
         {{- end }}
+        {{- if .Values.wso2.apim.configurations.security.jksSecretName }}
         - name: wso2am-traffic-manager-keystores
           mountPath: /home/wso2carbon/wso2-config-volume/repository/resources/security/{{ .Values.wso2.apim.configurations.security.truststore.name }}
           subPath: {{ .Values.wso2.apim.configurations.security.truststore.name }}
+        {{- end }}
         {{- if .Values.wso2.apim.configurations.security.keystores.primary.enabled }}
         - name: wso2am-traffic-manager-keystores
           mountPath: /home/wso2carbon/wso2-config-volume/repository/resources/security/{{ .Values.wso2.apim.configurations.security.keystores.primary.name }}
@@ -222,7 +224,9 @@ spec:
             secretProviderClass: {{ .Values.gcp.secretsManager.secretProviderClass }}
           {{- end }}
       {{- end }}
+      {{- if .Values.wso2.apim.configurations.security.jksSecretName }}
       - name: wso2am-traffic-manager-keystores
         secret:
           secretName: {{ .Values.wso2.apim.configurations.security.jksSecretName }}
+      {{- end }}
 {{- end }}
