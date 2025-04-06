@@ -224,7 +224,7 @@ wso2:
 
       eventhub:
         # -- Event hub (control plane) loadbalancer service url
-        serviceUrl: "apim-acp-wso2am-cp-service"
+        serviceUrl: "apim-acp-wso2am-acp-service"
         # -- Event hub service urls
         urls:
           - "apim-acp-wso2am-cp-1-service"
