@@ -449,7 +449,7 @@ wso2:
     replicas: 1
     # HPA configurations
     # -- Minimum replicas for HPA
-    minReplicas: 2
+    minReplicas: 1
     # -- Maximum replicas for HPA
     maxReplicas: 3
     # -- Target CPU utilization percentage for HPA
