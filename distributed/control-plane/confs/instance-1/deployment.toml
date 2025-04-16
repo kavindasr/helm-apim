@@ -13,7 +13,7 @@ type = {{ .Values.wso2.apim.configurations.userStore.type | quote }}
 {{- end }}
 
 [oauth.endpoints]
-oauth2_jwks_url="https://{{ template "apim-helm-cp.fullname" . }}-service:${mgt.transport.https.port}/oauth2/jwks"
+oauth2_jwks_url="https://{{ template "apim-helm-cp.fullname" . }}-service:{{ add 9443 .Values.wso2.apim.portOffset }}/oauth2/jwks"
 
 [super_admin]
 username = {{ .Values.wso2.apim.configurations.adminUsername | quote }}
