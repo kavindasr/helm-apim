@@ -38,6 +38,13 @@ spec:
   - host: {{ .Values.kubernetes.ingress.gateway.hostname }}
     http:
       paths:
+      - path: /api/am/gateway/v2/
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ template "apim-helm-gw.fullname" . }}-service
+            port:
+              number: {{ add 9443 .Values.wso2.apim.portOffset }}
       - path: /
         pathType: Prefix
         backend:
