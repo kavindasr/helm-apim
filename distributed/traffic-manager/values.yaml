@@ -216,7 +216,7 @@ wso2:
         # -- Event hub service urls
         urls:
           - "apim-acp-wso2am-acp-1-service"
-          - "apim-acp-wso2am-acp-2-service"
+          # - "apim-acp-wso2am-acp-2-service"
 
       # APIM OAuth configurations
       oauth_config:
