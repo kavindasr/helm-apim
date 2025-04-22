@@ -488,7 +488,7 @@ wso2:
 
     # -- Enable high availability for traffic manager. If this is enabled, two traffic manager instances will be deployed.
     # This is not relavant to HA in Kubernetes. Multiple replicas of the same instance will not count as HA for TM.
-    highAvailability: true
+    highAvailability: false
 
     persistence:
       # -- Persistent runtime artifacts for Apache Solr-based indexing
