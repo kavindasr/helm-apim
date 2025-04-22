@@ -219,7 +219,6 @@ wso2:
           password: ""
           # -- APIM database JDBC pool parameters
           poolParameters:
-            defaultAutoCommit: false
             testOnBorrow: true
             testWhileIdle: true
             validationInterval: 30000
@@ -236,7 +235,6 @@ wso2:
           password: ""
           # -- APIM shared database JDBC pool parameters
           poolParameters:
-            defaultAutoCommit: false
             testOnBorrow: true
             testWhileIdle: true
             validationInterval: 30000
