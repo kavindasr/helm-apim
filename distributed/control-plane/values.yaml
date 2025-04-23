@@ -434,7 +434,7 @@ wso2:
         # -- Memory request for API Manager
         memory: "2Gi"
         # -- CPU request for API Manager
-        cpu: "1500m"
+        cpu: "1000m"
       limits:
         # -- Memory limit for API Manager
         memory: "5Gi"
